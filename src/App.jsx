@@ -16,13 +16,13 @@ const Resume = () => {
   const projects = [
     {
       title: 'Lamoda',
-      description: 'Protoype of usual shopping app.',
+      description: 'Prototype of a typical shopping app.',
       imageUrl: lamodaGif,
       githubLink: 'https://alexandrasamoylo.github.io/lamoda/',
     },
     {
       title: 'Notion',
-      description: 'Notion app with multifunctional UI.',
+      description: 'Notion app with a multifunctional UI.',
       imageUrl: notionGif,
       githubLink: 'https://github.com/ALexandraSamoylo/notion',
     },
@@ -32,7 +32,7 @@ const Resume = () => {
     name: 'Samoylo Alexandra',
     profession: 'Frontend Developer',
     education:
-      'Higher Education, Belarusian State University (Math and computer science, 2027)',
+      'Higher Education, Belarusian State University (Math and Computer Science, 2027)',
     englishLevel: 'C1',
     russianLevel: 'C2',
     email: 'ssamoylo46@gmail.com',
@@ -109,6 +109,8 @@ const Resume = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             mb: 4,
+            flexDirection: { xs: 'column', sm: 'row' }, // Adjust layout for mobile
+            textAlign: { xs: 'center', sm: 'left' },
           }}
         >
           <Box>
@@ -134,16 +136,12 @@ const Resume = () => {
               height: 150,
               borderRadius: '50%',
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              marginTop: { xs: '20px', sm: 0 }, // Adjust avatar position for mobile
             }}
           />
         </Box>
-
         {/* Contact Information */}
-        <Box
-          sx={{
-            mb: 4,
-          }}
-        >
+        <Box sx={{ mb: 4 }}>
           <Typography
             variant="h6"
             sx={{
@@ -193,20 +191,9 @@ const Resume = () => {
             <strong>Languages:</strong> English (C1), Russian (C2)
           </Typography>
         </Box>
-
-        <Divider
-          sx={{
-            my: 4,
-            borderColor: '#e0e0e0',
-          }}
-        />
-
+        <Divider sx={{ my: 4, borderColor: '#e0e0e0' }} />
         {/* Work Experience */}
-        <Box
-          sx={{
-            mb: 4,
-          }}
-        >
+        <Box sx={{ mb: 4 }}>
           <Typography
             variant="h6"
             sx={{
@@ -218,29 +205,14 @@ const Resume = () => {
             Work Experience
           </Typography>
           {workExperience.map((experience, index) => (
-            <Box
-              key={index}
-              sx={{
-                mb: 3,
-              }}
-            >
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 'bold',
-                }}
-              >
+            <Box key={index} sx={{ mb: 3 }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                 {experience.title}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {experience.duration}
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  mt: 1,
-                }}
-              >
+              <Typography variant="body1" sx={{ mt: 1 }}>
                 {experience.description}
               </Typography>
               <ul>
@@ -253,20 +225,9 @@ const Resume = () => {
             </Box>
           ))}
         </Box>
-
-        <Divider
-          sx={{
-            my: 4,
-            borderColor: '#e0e0e0',
-          }}
-        />
-
+        <Divider sx={{ my: 4, borderColor: '#e0e0e0' }} />
         {/* Skills */}
-        <Box
-          sx={{
-            mb: 4,
-          }}
-        >
+        <Box sx={{ mb: 4 }}>
           <Typography
             variant="h6"
             sx={{
@@ -296,7 +257,6 @@ const Resume = () => {
             ))}
           </Grid>
         </Box>
-
         {/* Projects */}
         <Box>
           <Typography
@@ -351,7 +311,7 @@ const Resume = () => {
                       borderRadius: '4px',
                       marginBottom: '1rem',
                     }}
-                  />
+                  />{' '}
                   <Button
                     variant="outlined"
                     color="primary"
@@ -361,19 +321,18 @@ const Resume = () => {
                     sx={{
                       color: '#4a90e2',
                       borderColor: '#4a90e2',
-                      '&:hover': {
-                        backgroundColor: '#e6f0f9',
-                      },
+                      '&:hover': { backgroundColor: '#e6f0f9' },
                     }}
                   >
-                    Open Project
-                  </Button>
-                </Box>
+                    {' '}
+                    Open Project{' '}
+                  </Button>{' '}
+                </Box>{' '}
               </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Box>
+            ))}{' '}
+          </Grid>{' '}
+        </Box>{' '}
+      </Box>{' '}
     </Box>
   );
 };
